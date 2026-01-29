@@ -1,7 +1,7 @@
 myList = []
-myList.append("hello")
-myList.append("I")
 myList.append("need")
+myList.append("help")
+myList.append("I")
 myList.append("food")
 temp = myList[0]
 myList.remove(temp)
