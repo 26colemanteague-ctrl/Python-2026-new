@@ -1,14 +1,27 @@
 myList = [10,3,5,11,15,11,13,3,17,11,1,5,7, -2]
 
-target = int(input("what is the item you are looking for?>>"))
 if all (num > 0 for num in myList):
     print("All items are positive")
 if any (num <0 for num in myList):
         print("There is a negative number")
+print("")
+
+
 myList.sort()
 print(myList)
-print ("the biggest number is", myList [13])
+print ("")
 
+print ("the biggest number is", myList [13])
+print("")
+
+
+myList = [10,3,5,11,15,11,13,3,17,11,1,5,7, -2]
+first_element = myList [0]
+myList.remove(first_element)
+myList.append(first_element)
+print (myList)
+
+print("")
 def multiplyList(inList, multFactor):
       for i in range (len(inList)):
             inList[i] = inList[i] * multFactor
@@ -17,4 +30,3 @@ def multiplyList(inList, multFactor):
 
 newList = multiplyList(myList, 100)
 print(newList)
-newList
