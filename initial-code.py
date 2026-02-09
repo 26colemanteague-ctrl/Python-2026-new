@@ -1,5 +1,5 @@
 import os, time
-
+# make the text type out and be seen being type insted of it just apering
 def slowText(text, delay=0.1):
     for char in text:
         print(char, end='', flush=True)
@@ -15,7 +15,7 @@ def start():
     slowText("From here, you can go to the kitchen, the bedroom, or the garden.")
     # Further game logic would go here
     livingRoom()
-
+# this gives you the chose of where you want to go
 def livingRoom():
     os.system('cls' if os.name == 'nt' else 'clear')
     slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden.")
@@ -30,6 +30,6 @@ def livingRoom():
     else:
         print("Invalid choice. Please try again.")
         livingRoom()
-
+# alwose you to inter your name and start the program
 playerName = ""
 start()
