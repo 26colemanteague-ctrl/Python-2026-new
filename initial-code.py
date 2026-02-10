@@ -20,8 +20,10 @@ def start():
 
 # this gives you the chose of where you want to go/contution of start
 def livingRoom():
+    global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
-    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden.")
+    print("backpack: {}".format(backpack))
+    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden. You can also look for items.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "kitchen":
@@ -30,19 +32,36 @@ def livingRoom():
         bedroom()
     elif choice == "garden":
         garden()
-    else:
-        print("Invalid choice. Please try again.")
+    elif choice == "look around":
+        if searchBackpack(backpack, "oreos"):
+            slowText("You decided to scan the room. And you found nothing.")
+        else:
+            slowText("You decided to scan the room. You find a half-eaten pack of oreos. Do you want to pick them up?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                backpack.append("oreos")
+                print(backpack) # this line is only for testing
+        time.sleep(2)
         livingRoom()
 
 def kitchen ():
     os.system('cls' if os.name == 'nt' else 'clear')
     slowText("You are in the kitchen. There is a doors to the living room.")
     slowText("What would you like to do?")
+    global backpack
     choice = input().strip().lower()
     if choice == "living room":
         livingRoom()
-    else:
-        print("Invalid choice. Please try again.")
+    elif choice == "look for items":
+        if searchBackpack(backpack, "knife"):
+            slowText("You decided to scan the room. And you found nothing.")
+        else:
+            slowText("You decided to scan the room. You find a knife. Do you want to pick them up?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                backpack.append("knife")
+                print(backpack) # this line is only for testing
+        time.sleep(2)
         kitchen()
 
 def bedroom():
@@ -69,8 +88,16 @@ def garden():
         garden()
 
 
+def searchbackpack(backpake, item):
+    # this function should return true if you have something in your bag
+    found = False
+    for i in range(len(backpack)):
+        if backpack[i] == item:
+            found = True
+    
 
 
 # alwose you to inter your name and start the program
 playerName = ""
+backpack = []
 start()
