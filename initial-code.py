@@ -57,6 +57,20 @@ def bedroom():
         bedroom()
 
 
+def garden():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    slowText("You are in the garden. There is a door to the living room.")
+    slowText("What would you like to do?")
+    choice = input().strip().lower()
+    if choice == "living room":
+        livingRoom()
+    else:
+        print("Invalid choice. Please try again.")
+        garden()
+
+
+
+
 # alwose you to inter your name and start the program
 playerName = ""
 start()
