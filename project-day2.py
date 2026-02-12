@@ -24,7 +24,7 @@ def livingRoom():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden. You can also look for items.")
+    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden. You can also look around.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "kitchen":
@@ -33,7 +33,7 @@ def livingRoom():
         bedroom()
     elif choice == "garden":
         garden()
-    elif choice == "look for items":
+    elif choice == "look around":
         if searchBackpack(backpack, "oreos"):
             slowText("You decided to scan the room. And you found nothing.")
         else:
@@ -53,25 +53,48 @@ def kitchen():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the kitchen. There is a door to the living room.")
+    slowText("You are in the kitchen. There is a door to the living room or look around.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "living room":
         livingRoom()
+    elif choice == "look around":
+        if searchBackpack(backpack, "paper clip"):
+            slowText("You decided to scan the room. And you found nothing.")
+        else:
+            slowText("You decided to open a fue draws. You find a paper clip. Do you want to pick them up?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                backpack.append("paper clip")
+                print(backpack)
+        time.sleep(2)
+        kitchen()
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
-        kitchen()
+        livingRoom()
 
 def garden():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the garden. There is a door to the living room.")
+    slowText("You are in the garden. There is a door to the living room or you could take a look around.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "living room":
         livingRoom()
+    elif choice == "look around":
+        if searchBackpack(backpack, "rock"):
+            slowText("You decided to scan the room. And you found nothing.")
+        else:
+            slowText("You decided to look around. You find a rock in the ground. Do you want to pick them up?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                backpack.append("rock")
+                print(backpack)
+                slowText("maybe this could be used for somthing.")
+        time.sleep(2)
+        garden()
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
@@ -81,11 +104,22 @@ def bedroom():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the bedroom. There is a door to the living room.")
+    slowText("You are in the bedroom. There is a door to the living room or could look around the bedroom.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "living room":
         livingRoom()
+    elif choice == "look around":
+        if searchBackpack(backpack, "paper with a code writen on it"):
+            slowText("You decided to scan the room. And you found nothing.")
+        else:
+            slowText("You decided to look around. You find a paper with code writen on it. Do you want to pick them up?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                backpack.append("paper with code writen on it")
+                print(backpack)
+        time.sleep(2)
+        bedroom()
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
