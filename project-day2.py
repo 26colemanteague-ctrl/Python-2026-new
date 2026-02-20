@@ -53,11 +53,13 @@ def kitchen():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the kitchen. There is a door to the living room or look around.")
+    slowText("You are in the kitchen. There is a door to the living room and a window outside. or look around.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "living room":
         livingRoom()
+    elif choice == "open Window":
+        openWindow()
     elif choice == "look around":
         if searchBackpack(backpack, "paper clip"):
             slowText("You decided to scan the room. And you found nothing.")
@@ -132,6 +134,28 @@ def searchBackpack(pack, item):
         if pack[i] == item:
             found = True
     return found
+
+
+def openWindow():
+    slowText ("you dicited to throw the rock at the window")
+    if searchBackpack(backpack, "rock") == True:
+        slowText("use rock to brack the window.")
+        slowText("there is a wilded dog outside.")
+        if searchBackpack(backpack, "oreos") == True:
+            slowText("you throw the oreos to distreact the dog.")
+            slowText("Congracts you made it out!")
+        else:
+            slowText("you cant evade the dog right now.")
+            time.sleep(3)
+            kitchen()
+    else:
+        slowText("unfortunately, you cant unlock the window.")
+        time.sleep(3)
+        kitchen()
+
+
+
+
 
 
 
