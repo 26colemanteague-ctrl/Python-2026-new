@@ -141,7 +141,7 @@ def openWindow():
     if searchBackpack(backpack, "rock") == True:
         slowText("use rock to brack the window.")
         slowText("there is a wilded dog outside.")
-        if searchBackpack(backpack, "oreos") == True:
+        if searchBackpack(backpack, "oreos") == True: # I would run the backpack code and it would not work becous it was missing a colin in which i add and it worked 
             slowText("you throw the oreos to distreact the dog.")
             slowText("Congracts you made it out!")
         else:
