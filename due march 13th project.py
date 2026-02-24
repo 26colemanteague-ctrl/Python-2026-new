@@ -10,6 +10,8 @@ choice = input().strip().lower()
 if choice == "left":
     #left()
     print("you have desided to go left and see ")
+elif choice == "middel"
+    
 
 
 
