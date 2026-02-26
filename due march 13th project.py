@@ -22,7 +22,7 @@ elif choice == "up":
 elif choice == "down":
     #down
     print("you crowl down a tight whole leading to an other room.")
-else choice == "stay": 
+else: 
     #stay
     print("you can't desided maybey take another look.")
 
