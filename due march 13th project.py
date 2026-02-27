@@ -2,6 +2,15 @@ print(" hello welcom to the game. what is you name?")
 global playerName
 playerName= input()
 import os, time, random 
+
+def down():
+    os.system ('cls' if os.name == 'nt' else 'clear')
+
+def right():
+    os.system ('cls' if os.name == 'nt' else 'clear')
+
+
+
 options =("left", "middel", "right", "up", "down")
 print(random.choice(options))
 os.system ('cls' if os.name == 'nt' else 'clear')
@@ -14,20 +23,20 @@ elif choice == "middel":
     #middle()
     print("you have desided to go on the middel.")
 elif choice == "right":
-    #right()
+    right()
     print("you have desided to go right.")
+    print("you find your self seeing a way", random.choice(options) ("what will you do?"))
 elif choice == "up":
     #up()
     print("you desided to clime up the latter.")
 elif choice == "down":
-    #down
+    down()
     print("you crowl down a tight whole leading to an other room.")
+    print("you go down the whole and find", random.choice(options))
+    #newRoom()
+
 else: 
-    #stay
     print("you can't desided maybey take another look.")
-
-
-
 
 
 
