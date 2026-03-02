@@ -27,7 +27,7 @@ def middel():
 
 def newRoom():
     os.system ('cls' if os.name == 'nt' else 'clear')
-    print(random.choice(options))
+    print("you find your self in a new room and see",random.choice(options))
 
 
 print(random.choice(options))
@@ -51,7 +51,6 @@ elif choice == "up":
 elif choice == "down":
     down()
     print("you crowl down a tight whole leading to an other room.")
-    print("you go down the whole and find", random.choice(options))
     newRoom()
 
 else: 
