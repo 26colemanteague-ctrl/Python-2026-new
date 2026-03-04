@@ -25,10 +25,29 @@ def up():
 def middel():
     os.system ('cls' if os.name == 'nt' else 'clear')
 
+def sameRoom():
+    os.system ('cls' if os.name == 'nt' else 'clear')
+
 def newRoom():
     os.system ('cls' if os.name == 'nt' else 'clear')
-    print("you find your self in a new room and see",random.choice(options))
+    print("you find your self in a new room and see",random.choice(options), random.choice(options), random.choice(options))
+if sameRoom():
+    newRoom()
 
+if choice == "left":
+    left()
+elif choice == "right":
+    right()
+elif choice == "middle":
+    middel()
+elif choice == "up":
+    up()
+elif choice == "down":
+    down()
+else:
+    print ("you can't deside maybe take another look.")
+
+    
 
 print(random.choice(options))
 os.system ('cls' if os.name == 'nt' else 'clear')
@@ -37,17 +56,20 @@ choice = input().strip().lower()
 if choice == "left":
     left()
     print("you have desided to go left.")
+    newRoom()
 elif choice == "middel":
     middel()
     print("you have desided to go on the middel.")
+    newRoom()
 elif choice == "right":
     right()
     print("you have desided to go right.")
-    print("you find your self seeing a way", random.choice(options) ("what will you do?"))
+    print("you find your self seeing a way", random.choice(options))
+    newRoom()
 elif choice == "up":
     up()
     print("you desided to clime up the latter.")
-
+    newRoom()
 elif choice == "down":
     down()
     print("you crowl down a tight whole leading to an other room.")
@@ -55,6 +77,7 @@ elif choice == "down":
 
 else: 
     print("you can't desided maybe take another look.")
+    sameRoom()
 
 
 
