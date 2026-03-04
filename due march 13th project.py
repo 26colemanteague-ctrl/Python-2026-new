@@ -4,7 +4,7 @@ playerName= input()
 import os, time, random 
 choice = input().strip().lower()
 
-options =("left", "middel", "right", "up", "down")
+options =("left", "middel", "right", "up", "down", "conplet darkness")
 
 def down():
     os.system ('cls' if os.name == 'nt' else 'clear')
@@ -32,7 +32,7 @@ def newRoom():
 
 print(random.choice(options))
 os.system ('cls' if os.name == 'nt' else 'clear')
-print ("you have woke up in a stange cave only lighten by a torch on the ground. you pick up the torch and see a path to", random.choice(options))
+print ("you have woke up in a stange cave only lighten by a torch on the ground. you pick up the torch and see a path to", random.choice(options), random.choice(options), random.choice(options))
 choice = input().strip().lower()
 if choice == "left":
     left()
