@@ -6,7 +6,7 @@ choice = input().strip().lower()
 
 
 
-options =("left", "middel", "right", "up", "down", "conplet darkness")
+options =("left", "middel", "right", "up", "down", "conplet darkness", "and a way out")
 
 
 
@@ -22,23 +22,44 @@ if sameRoom():
 
 def down():
     os.system ('cls' if os.name == 'nt' else 'clear')
+if  choice == "down":
+    down()
+    print("you crowl down a tight whole leading to an other room.")
+    newRoom()
 
 def right():
     os.system ('cls' if os.name == 'nt' else 'clear')
+if choice == "right":
+    right()
+    print("you have desided to go right.")
+    print("you find your self seeing a way", random.choice(options))
+    newRoom()
 
 
 def left():
     os.system ('cls' if os.name == 'nt' else 'clear')
 if choice == "left":
     print(random.choice(options))
+    print("you have desided to go left.")
     newRoom()
 
 
 def up():
     os.system ('cls' if os.name == 'nt' else 'clear')
+if choice == "up":
+    up()
+    print("you desided to clime up the latter.")
+    newRoom()
 
 def middel():
     os.system ('cls' if os.name == 'nt' else 'clear')
+if choice == "middel":
+    middel()
+    print("you have desided to go on the middel.")
+    newRoom()
+
+def wayOut():
+        os.system ('cls' if os.name == 'nt' else 'clear')
 
 
 if choice == "left":
@@ -51,6 +72,8 @@ elif choice == "up":
     up()
 elif choice == "down":
     down()
+elif choice == "way out":
+    wayOut()
 else:
     print ("you can't deside maybe take another look.")
 
