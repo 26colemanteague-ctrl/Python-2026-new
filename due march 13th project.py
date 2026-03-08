@@ -4,7 +4,21 @@ playerName= input()
 import os, time, random 
 choice = input().strip().lower()
 
+
+
 options =("left", "middel", "right", "up", "down", "conplet darkness")
+
+
+
+def sameRoom():
+    os.system ('cls' if os.name == 'nt' else 'clear')
+    print()
+
+def newRoom():
+    os.system ('cls' if os.name == 'nt' else 'clear')
+    print("you find your self in a new room and see",random.choice(options), random.choice(options), random.choice(options))
+if sameRoom():
+    newRoom()
 
 def down():
     os.system ('cls' if os.name == 'nt' else 'clear')
@@ -17,6 +31,7 @@ def left():
     os.system ('cls' if os.name == 'nt' else 'clear')
 if choice == "left":
     print(random.choice(options))
+    newRoom()
 
 
 def up():
@@ -25,14 +40,6 @@ def up():
 def middel():
     os.system ('cls' if os.name == 'nt' else 'clear')
 
-def sameRoom():
-    os.system ('cls' if os.name == 'nt' else 'clear')
-
-def newRoom():
-    os.system ('cls' if os.name == 'nt' else 'clear')
-    print("you find your self in a new room and see",random.choice(options), random.choice(options), random.choice(options))
-if sameRoom():
-    newRoom()
 
 if choice == "left":
     left()
