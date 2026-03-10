@@ -8,17 +8,24 @@ choice = input().strip().lower()
 
 options =("left", "middel", "right", "up", "down", "conplet darkness", "and a way out")
 
+while True: 
+    print("this will run on loop")
+    playerName = ("type way out to end the loop")
+    print("you found a way out" + "loop ended")
+    break
 
 
 def sameRoom():
     os.system ('cls' if os.name == 'nt' else 'clear')
     print()
 
+
 def newRoom():
     os.system ('cls' if os.name == 'nt' else 'clear')
     print("you find your self in a new room and see",random.choice(options), random.choice(options), random.choice(options))
-if sameRoom():
-    newRoom()
+
+
+
 
 def down():
     os.system ('cls' if os.name == 'nt' else 'clear')
@@ -60,24 +67,11 @@ if choice == "middel":
 
 def wayOut():
         os.system ('cls' if os.name == 'nt' else 'clear')
+if choice == "way out":
+    print ("you see light at the end of the tunoal.")
+    print
+    print ("after you leave and you eyes adjust you see your car at the bottem of the hill and you drive home.")
 
-
-if choice == "left":
-    left()
-elif choice == "right":
-    right()
-elif choice == "middle":
-    middel()
-elif choice == "up":
-    up()
-elif choice == "down":
-    down()
-elif choice == "way out":
-    wayOut()
-else:
-    print ("you can't deside maybe take another look.")
-
-    
 
 print(random.choice(options))
 os.system ('cls' if os.name == 'nt' else 'clear')
